@@ -1,4 +1,4 @@
-function [x] = Zeidel(n, h, eps, mu1)
+function [x] = Seidel(n, h, eps, mu1)
     x = ones(n, 1);
 
     A = getCoeffs(n, h);
