@@ -1,20 +1,17 @@
-
-
 n = 5;
 h = 1/n;
 eps = h^6;
-% disp(eps);
 mu1 = 1;
 
-x = Seidel(n, h, eps, mu1);
-top = getTopDiagCoeffs(n, h);
-mid = getMainDiagCoeffs(n, h);
 bot = getBotDiagCoeffs(n, h);
-
+mid = getMainDiagCoeffs(n, h);
+top = getTopDiagCoeffs(n, h);
 b = getRightPart(n, h, mu1);
 
-disp(mult3DiagMatrixOnVector(bot, mid, top, x));
+x = Seidel(bot, mid, top, b, n, eps);
+
 disp(b);
+disp(mult3DiagMatrixOnVector(bot, mid, top, x));
 
 
 

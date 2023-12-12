@@ -1,10 +1,5 @@
-function [x] = Seidel(n, h, eps, mu1)
+function [x] = Seidel(bot, mid, top, b, n, eps)
     x = ones(n, 1);
-
-    bot = getBotDiagCoeffs(n, h);
-    mid = getMainDiagCoeffs(n, h);
-    top = getTopDiagCoeffs(n, h);
-    b = getRightPart(n, h, mu1);
     
     while (max(abs(mult3DiagMatrixOnVector(bot, mid, top, x) - b)) > eps)
 
